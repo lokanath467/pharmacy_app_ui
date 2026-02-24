@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your-dockerhub-username/pharmacy-app-ui"
+        DOCKER_IMAGE = "lokanath467/pharmacy-app-ui"
         DOCKER_TAG = "${BUILD_NUMBER}"
         CONTAINER_NAME = "pharmacy-ui"
         APP_PORT = "3000"
