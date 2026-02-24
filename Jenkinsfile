@@ -40,7 +40,7 @@ pipeline {
                     string(credentialsId: 'sudo-password', variable: 'SUDO_PASS')
                 ]) {
                     sh '''
-                        echo "$DOCKER_PASS" | echo "$SUDO_PASS" | sudo -S docker login -u "$DOCKER_USER" --password-stdin
+                        echo "$SUDO_PASS" | sudo -S sh -c 'echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin'
                     '''
                 }
             }
